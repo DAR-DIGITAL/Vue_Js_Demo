@@ -2,18 +2,18 @@
 import axios from 'axios';
 import AdminLayout from './AdminLayout.vue';
 import WebSiteLayout from './WebSiteLayout.vue';
-
+const user =''
 </script>
 
 <template>
-  <div class="w-full ">
+  <div v-if="user=='admin'" class="w-full ">
  <AdminLayout/>
  
   </div>
-  <!-- <div class="w-full ">
+  <div v-else class="w-full ">
  <WebSiteLayout/>
  
-  </div> -->
+  </div>
 </template>
 
 
