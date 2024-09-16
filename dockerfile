@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5173
 
 # Step 7: Set the command to run the Vite development server
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["npm", "run", "build", "--", "--host"]
