@@ -2,7 +2,7 @@
 <template>
     <div>
         <!-- component -->
-<section class="bg-white ">
+<section class="bg-white p-1 ">
         <div class="container px-6 py-8 mx-auto">
             <div class="lg:flex lg:-mx-2">
                 <div class="space-y-3 lg:w-1/5 lg:px-2 lg:space-y-4">
