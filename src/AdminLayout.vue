@@ -8,9 +8,9 @@ import NavBar from './components/AdminComponents/NavBar.vue';
 
 <template>
     <div class="flex w-full overflow-hidden">
-        <div class="w-1/6 ">
+        <div class="w-1/6 flex">
             <SideBar/> 
-
+      
         </div>
         <div class="flex flex-col w-full">
       <NavBar/>
