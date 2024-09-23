@@ -2,10 +2,13 @@
 import axios from 'axios';
 import AdminLayout from './AdminLayout.vue';
 import WebSiteLayout from './WebSiteLayout.vue';
-const user =''
+import { useLayoutStore } from './store/layout';
+const layoutStore = useLayoutStore()
+const user ='admin'
 </script>
 
 <template>
+  <div :class="layoutStore.darkMode? 'bg-gray-950': 'bg-white'">
   <div v-if="user=='admin'" class="w-full ">
  <AdminLayout/>
  
@@ -14,6 +17,7 @@ const user =''
  <WebSiteLayout/>
  
   </div>
+</div>
 </template>
 
 

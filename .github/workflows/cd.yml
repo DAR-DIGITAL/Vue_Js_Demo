@@ -1,0 +1,30 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name:  CD Pipeline
+
+on:
+    workflow_run:
+        workflows: ["CI Pipeline"]
+        types:
+          - completed
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+       node-version: [18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+  
+    - name: Pull Docker image
+      run: sudo docker pull docker pull zakariamegnioui/demo:main-3c58df9
+    - name: Delete Old Docker container
+      run: sudo docker rm -f demo-container || true
+    - name: Run docker container
+      run: sudo docker run -d -p 5173:5173 --name demo-container zakariamegnioui/demo
+
+    
