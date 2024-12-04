@@ -1,6 +1,7 @@
 ```javascript
 <script setup>
 import { useLayoutStore } from '../../store/layout';
+import { routes } from '../../route/routes';
 const layoutStore = useLayoutStore()
 
 
@@ -15,9 +16,9 @@ const layoutStore = useLayoutStore()
   </a>
   </div>
   <nav class="flex flex-col gap-1 min-w-[240px] p-2 font-sans text-base font-normal text-gray-700">
-    <div v-for="r in layoutStore.routes" :key="r.name" @click="layoutStore.updateCurrentRoute(r)" role="button" tabindex="0" class="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
-      
-      {{r.name}}
+    <div v-for="r in routes" :key="r.name" :to="r.path"  role="button" tabindex="0" class="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none">
+      <RouterLink :to="r.path"> {{r.name}}</RouterLink>
+     
     </div>
  
   </nav>
